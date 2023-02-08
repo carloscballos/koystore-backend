@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
-import indexRoutes from './routes/index';
+import {Routes} from './routes/index';
 import cors from 'cors'
 import path from 'path';
 
@@ -16,7 +16,7 @@ app.use(cors())
 app.use(express.json());
 
 //routes
-app.use('/api/v1', indexRoutes);
+Routes.init(app);
 
 // to store public files
 app.use('/public', express.static(path.resolve('public')));

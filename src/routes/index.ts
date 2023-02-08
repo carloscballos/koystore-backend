@@ -1,15 +1,16 @@
-import { Router } from "express";
-const router = Router();
+import * as express from 'express';
+import {Public} from './public';
 
-import { createCustomer, editById, getById, getCustomers} from '../controllers/customer.controller'
 
-router.route('/customers')
-    .post(createCustomer)
-    .get(getCustomers)
-
-router.route('/customers/:customerId')
-    .post()
-    .get(getById)
-    .put(editById)
-
-export default router
+export class Routes {
+  /**
+   * Registers all the application routes
+   * @param app
+   */
+  static init(app: express.Application) {
+      //Define public endpoint prefix
+     app.use( '/api/v1/',Public.init());
+    //define private endpoint prefix
+    //  app.use( '/api/v1/private/',Private.init());
+   }
+}
