@@ -10,7 +10,7 @@ export class CityRoutes{
             .get(CityController.getAll)
 
         router
-            .route('/cities/:typeDocumentId')
+            .route('/cities/:cityId')
             .get(CityController.getById)
     }
 }

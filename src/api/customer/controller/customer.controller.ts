@@ -18,7 +18,7 @@ export class CustomerController {
     static async getById( req: Request, res:Response) : Promise<Response>{
         let customerId = req.params.customerId;
         let query = {_id : customerId}
-        const customer = await Customer.find(query);
+        const customer = await Customer.findOne(query);
         return res.json(customer);
     }
 

@@ -9,9 +9,9 @@ export class CityController {
     }
 
     static async getById( req: Request, res:Response) : Promise<Response>{
-        let cityId = req.params.typeDocumentId;
+        let cityId = req.params.cityId;
         let query = {_id : cityId}
-        const city = await City.find(query);
+        const city = await City.findOne(query);
         return res.json(city);
     }
 }
