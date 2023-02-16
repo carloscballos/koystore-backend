@@ -17,9 +17,6 @@ const schema = new Schema({
 });
 
 interface ICity extends Document{
-    _id: {
-        type: string
-    },
     codedepartment: {
         type: string,
     },
@@ -31,4 +28,4 @@ interface ICity extends Document{
     },
 }
 
-export default model<ICity>('city', schema)
+export default model<ICity>('city', schema, 'cities')

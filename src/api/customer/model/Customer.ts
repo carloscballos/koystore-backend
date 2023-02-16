@@ -63,4 +63,4 @@ interface ICustomer extends Document{
     }
 }
 
-export default model<ICustomer>('Customer', schema)
+export default model<ICustomer>('customer', schema, 'customers')
