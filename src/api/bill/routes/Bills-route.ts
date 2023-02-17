@@ -6,12 +6,12 @@ export class BillsRoutes{
     static init(router: express.Router){
 
         router
-            .route('/customers')
+            .route('/bills')
             .post(BillController.createBill)
             .get(BillController.getAll)
 
         router
-            .route('/customers/:customerId')
+            .route('/bills/:billId')
             .get(BillController.getById)
             .put(BillController.editById)
     }

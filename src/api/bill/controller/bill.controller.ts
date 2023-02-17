@@ -79,7 +79,7 @@ export class BillController {
             comments: Joi.string(),
             customer: Joi.string().required(),
             items: Joi.array().required(),
-            totalSummary: Joi.string().required(),
+            totalSummary: Joi.number().required(),
         });
         return schema.validate(bill);
     }
