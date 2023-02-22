@@ -1,5 +1,5 @@
 import express from "express";
-import { BillController} from '../controller/bill.controller'
+import { BillController} from '../controller/bill-controller'
 
 export class BillsRoutes{
     

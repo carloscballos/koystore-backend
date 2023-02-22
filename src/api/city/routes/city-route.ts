@@ -1,4 +1,4 @@
-import { CityController } from '../controller/city.controller';
+import { CityController } from '../controller/city-controller';
 import express from "express";
 
 export class CityRoutes{

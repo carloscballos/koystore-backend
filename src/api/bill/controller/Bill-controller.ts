@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import Joi from 'joi';
-import Bill from "../model/Bill";
+import Bill from "../model/Bill-model";
 
 export class BillController {
 

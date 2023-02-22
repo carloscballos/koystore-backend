@@ -1,6 +1,6 @@
 import express from 'express';
-import { CustomersRoutes } from '../api/customer/routes/Customers-route'
-import { BillsRoutes } from '../api/bill/routes/Bills-route'
+import { CustomersRoutes } from '../api/customer/routes/Customer-route'
+import { BillsRoutes } from '../api/bill/routes/Bill-route'
 import { TypedocumentRoutes } from '../api/type-document/routes/type-document-route'
 import { CityRoutes } from '../api/city/routes/city-route'
 

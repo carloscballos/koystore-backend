@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import Joi, {ValidationError} from 'joi'
-import City from "../model/city";
+import City from "../model/City-model";
 
 export class CityController {
 

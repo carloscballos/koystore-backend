@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import Joi from 'joi';
-import Customer from "../model/Customer";
+import Customer from "../model/Customer-model";
 
 export class CustomerController {
 

@@ -1,5 +1,5 @@
 import express from "express";
-import { CustomerController} from '../controller/customer.controller'
+import { CustomerController} from '../controller/customer-controller'
 
 export class CustomersRoutes{
     
