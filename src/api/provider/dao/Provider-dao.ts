@@ -1,5 +1,5 @@
-
 import ProviderModel from "../model/Provider-model";
+import Provider from "../model/Provider-model";
 
 export class ProviderDAO {
   static async getAllProviders() {
@@ -11,7 +11,7 @@ export class ProviderDAO {
     }
   }
 
-  static async createProvider(providerData: any) {
+  static async createProvider(providerData: typeof Provider) {
     try {
       const provider = await ProviderModel.create(providerData);
       return provider;

@@ -1,5 +1,17 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Document } from "mongoose";
 import Joi from "joi";
+
+interface Provider extends Document {
+    name: string;
+    typeDocument: number;
+    document: number;
+    email: string;
+    phone: number;
+    city: string;
+    address: string;
+    created: Date;
+    Home: boolean;
+  }
 
 const providerSchema = new Schema({
     name: {
@@ -34,7 +46,7 @@ const providerSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    isHome: {
+    home: {
         type: Boolean,
     }
 });
@@ -48,7 +60,7 @@ const providerSchemaJoi = Joi.object({
     city: Joi.string().required(),
     address: Joi.string().required(),
     created: Joi.date().default(Date.now),
-    isHome: Joi.boolean()
+    home: Joi.boolean()
 });
 
 providerSchema.statics.getAllProviders = function() {
@@ -64,7 +76,7 @@ providerSchema.statics.createProvider = async function(providerData) {
     return provider;
   };
 
-  const ProviderModel = model('Provider', providerSchema);
+  const ProviderModel = model<Provider>('Provider', providerSchema);
 
   export default ProviderModel;
 
