@@ -1,9 +1,9 @@
-import { ProviderController } from '../controller/provider-controller';
-import express from "express";
+import { ProviderController } from '../controller/Provider-controller';
+import { Router } from "express";
 
 export class ProvidersRoutes{
     
-    static init(router: express.Router){
+    static init(router: Router){
 
         router
             .route('/providers')

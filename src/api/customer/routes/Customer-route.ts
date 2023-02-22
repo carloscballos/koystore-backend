@@ -1,9 +1,9 @@
-import express from "express";
-import { CustomerController} from '../controller/customer-controller'
+import {Router} from "express";
+import { CustomerController } from '../controller/Customer-controller'
 
 export class CustomersRoutes{
     
-    static init(router: express.Router){
+    static init(router: Router){
 
         router
             .route('/customers')

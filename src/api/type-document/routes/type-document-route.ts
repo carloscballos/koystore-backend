@@ -1,9 +1,9 @@
 import { TypedocumentController } from '../controller/type-document.controller';
-import express from "express";
+import { Router } from "express";
 
 export class TypedocumentRoutes{
     
-    static init(router: express.Router){
+    static init(router: Router){
 
         router
             .route('/type-documents')

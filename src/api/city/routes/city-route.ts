@@ -1,9 +1,9 @@
-import { CityController } from '../controller/city-controller';
-import express from "express";
+import { CityController } from '../controller/City-controller';
+import {Router} from "express";
 
 export class CityRoutes{
     
-    static init(router: express.Router){
+    static init(router: Router){
 
         router
             .route('/cities')
