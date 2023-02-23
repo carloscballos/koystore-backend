@@ -67,7 +67,6 @@ export class CustomerController {
                 address
               });
             const updatedCustomer = await customer.save();
-
             return res.json(updatedCustomer);
         } catch (error) {
             console.error(error);
@@ -79,9 +78,9 @@ export class CustomerController {
         const schema = Joi.object({
             name: Joi.string().required(),
             typeDocument: Joi.string().required(),
-            document: Joi.string().required(),
+            document: Joi.number().required(),
             email: Joi.string().email().required(),
-            phone: Joi.string().required(),
+            phone: Joi.number().required(),
             city: Joi.string().required(),
             address: Joi.string().required(),
         });

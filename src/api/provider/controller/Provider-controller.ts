@@ -19,4 +19,23 @@ export class ProviderController {
       res.status(400).json(error);
     }
   }
+
+  static async getById(req: Request, res: Response) {
+    try {      
+      const provider = await ProviderDAO.getById(req.params.providerId);
+      res.status(201).json(provider);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  }
+
+
+  static async editById(req: Request, res: Response) {
+    try {      
+      const provider = await ProviderDAO.editById(req.params.providerId, req.body);
+      res.status(201).json(provider);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  }
 }

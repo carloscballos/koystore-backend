@@ -1,7 +1,7 @@
 import { Schema, model, Document } from "mongoose";
 import Joi from "joi";
 
-interface Provider extends Document {
+export interface Provider extends Document {
     name: string;
     typeDocument: number;
     document: number;
@@ -51,30 +51,17 @@ const providerSchema = new Schema({
     }
 });
 
-const providerSchemaJoi = Joi.object({
+export const providerSchemaJoi = Joi.object({
     name: Joi.string().required(),
-    typeDocument: Joi.number().required(),
+    typeDocument: Joi.string().required(),
     document: Joi.number().required(),
     email: Joi.string().email().required(),
     phone: Joi.number().required(),
-    city: Joi.string().required(),
+    city: Joi.number().required(),
     address: Joi.string().required(),
     created: Joi.date().default(Date.now),
     home: Joi.boolean()
 });
-
-providerSchema.statics.getAllProviders = function() {
-    return this.find({});
-  };
-  
-providerSchema.statics.createProvider = async function(providerData) {
-    const { error, value } = providerSchemaJoi.validate(providerData);
-    if (error) {
-      throw new Error(error.details[0].message);
-    }
-    const provider = await this.create(value);
-    return provider;
-  };
 
   const ProviderModel = model<Provider>('Provider', providerSchema);
 

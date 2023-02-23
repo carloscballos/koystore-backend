@@ -10,9 +10,9 @@ export class ProvidersRoutes{
             .post(ProviderController.createProvider)
             .get(ProviderController.getAllProviders)
 
-    //     router
-    //         .route('/customers/:customerId')
-    //         .get(ProviderController.getById)
-    //         .put(ProviderController.editById)
+        router
+            .route('/providers/:providerId')
+            .get(ProviderController.getById)
+            .put(ProviderController.editById)
     }
 }
